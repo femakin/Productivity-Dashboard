@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADMIN PORTAL</title>
+
+<style type="text/css">
+  
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  /* background-color: #add8e6; */
+ background: blue;
+  display: flex;
+  justify-content: center;
+  height: 500vh;
+}
+
+
+.container {
+  min-width: 80px;
+  margin-top: 35px;
+}
+
+
+.section-b {
+  background-color: #fff;
+  color: #000;
+  padding: 25px;
+  border-radius: 15px 15px 15px 0;
+}
+
+
+.section-b .b-heading {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.section-b .b-heading > h2 {
+  color: #062863;
+}
+
+
+.section-b .b-heading > p {
+  color: #4a5568;
+  font-size: 14px;
+}
+
+
+
+
+.form-content {
+  margin-bottom: 20px;
+}
+
+.form-content:last-child {
+  margin-bottom: 0;
+}
+
+
+.btn {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: rgb(8, 62, 158);
+  border: none;
+  width: 100%;
+  border-radius: 12px 12px 12px 0;
+  cursor: pointer;
+  padding: 20px 0;
+  margin: 20px 0;
+}
+
+
+
+.form-content > label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+
+
+.form-content > input
+ {
+  background-color: #edf2f7;
+  border: none;
+  padding: 13px;
+  width: 100%;
+  outline-style: none;
+  outline-color: rgb(26, 32, 44);
+}
+
+
+.form-content > select
+ {
+  background-color: #edf2f7;
+  border: none;
+  padding: 13px;
+  width: 100%;
+  outline-style: none;
+  outline-color: rgb(26, 32, 44);
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+.section-b{
+  width: 100%;
+}
+
+}
+</style>
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+<div class="container" >
+<section class="section-b">
+        <div class="b-heading">
+          <h2>Please login to your account</h2>
+          <p>welcome to freeway books and Publishing</p>
+          <h4 class="note"  style="color: #00FF00;">Always good to have you here. <br>Please endeavor to wash your hands regularly and stay safe.</h4>
+
+          <p class="note"  style="color: red;">All staff are to fill this form with their valid email and password <br> to get their tasks and deadline for submission.</p>
+
+        </div>
+ <div class="form-containeer">
+          
+    <div  class="bg">
+        <div  id="man"  class="content">
+      
+          <form action = "" name = "myForm" onsubmit = "return(validate());">
+            <div class="form-content">
+              <label for="full-name">Full Name</label>
+              <input type="text" id="name" placeholder="Full Name" required="" />
+            </div>
+            <div class="form-content">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="Email Address" required="" />
+            </div>
+            <div class="form-content">
+              <label for="phone-number">Phone Number</label>
+              <input type="text" id="phone-number" placeholder="Phone Number" required="" />
+            </div>
+            <div class="form-content">
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="Password" required="" />
+            </div>
+            
+            <div  class="form-content">
+              <label for="">Position</label>
+              <select name = "POSITION" id="position">
+                      <option value = "-1" selected>[choose yours]</option>
+                      <option value = "1">MANAGER</option>
+                      <option value = "2">ASSISTANT MANAGER</option>
+                      <option value = "3">DEVELOPER</option>
+                      <option value = "3">SECRETARY</option>
+                      <option value = "3">BRANCH HEAD</option>
+                   </select>
+
+            </div>
+
+
+
+
+            <div class="form-content">
+              <label for="">Country</label>
+              <select name = "Country" id="country">
+                        <option value = "-1" selected>[choose yours]</option>
+                        <option value = "1">NIGERIA</option>
+                        <option value = "2">DUBAI</option>
+                        <option value = "3">MOROCCO</option>
+                        <option value = "3">TOGO</option>
+                        <option value = "3">CAMEROUN</option>
+                     </select>
+            </div>
+            <button type="submit" class="btn" value="Sign In"    onclick="validate();">SIGN IN</button>
+
+
+              
+
+
+
+
+
+          </form>
+
+
+
+
+
+
+        </div>
+    </div>
+    
+        </div>
+
+</div>
+
+
+
+
+
+<script>
+    
+    
+    function validate(){
+        var name = document.getElementById("name").value;
+     
+        var passWord = document.getElementById("password").value;
+    
+     if(document.myForm.POSITION.selectedIndex== ""){
+         alert("please select your position!")
+     }
+    
+        if(document.myForm.Country.selectedIndex==""){
+            alert ("please select a country!");
+            return false;
+        }
+        
+    
+    if(name== null || name== "") {
+        alert("Full name is required!")
+    }    
+        
+    
+    if(passWord== null || passWord== ""){
+        alert("please enter password");
+        return false;
+    }
+    
+
+//
+
+    window.open('manager.html')
+    
+    
+    }
+    </script>
+    
+
+
+
+
+
+</body>
+
+
+<!---      
+
+
+
+
+<form action = "" name = "myForm" onsubmit = "return(validate());">
+           
+
+
+            <table cellspacing = "2" cellpadding = "2" border = "1">
+               
+               <tr>
+                  <td align = "right"   class="form-content">Name</td>
+                  <td><input type = "text" name = "Name" id="name"   required/></td>
+               </tr>
+               
+               <tr>
+                  <td align = "right"  class="form-content">Email</td>
+                  <td><input type = "text" name = "EMail" id="email"/></td>
+               </tr>
+               
+               <tr>
+                  <td align = "right"   class="form-content">Zip Code</td>
+                  <td><input type = "text" name = "Zip" required /></td>
+               </tr>
+               
+        
+               <tr>
+                <td align = "right"    class="form-content">Password</td>
+                <td><input type = "password" name = "password" id="password"/></td>
+             </tr>
+        
+        
+             <tr>
+                <td align = "right"   class="form-content">Position</td>
+                <td>
+                   <select name = "POSITION" id="position">
+                      <option value = "-1" selected>[choose yours]</option>
+                      <option value = "1">MANAGER</option>
+                      <option value = "2">ASSISTANT MANAGER</option>
+                      <option value = "3">DEVELOPER</option>
+                      <option value = "3">SECRETARY</option>
+                      <option value = "3">BRANCH HEAD</option>
+                   </select>
+                </td>
+             </tr>
+        
+        
+               <tr>
+                  <td align = "right"   class="form-content">Country</td>
+                  <td>
+                     <select name = "Country" id="country">
+                        <option value = "-1" selected>[choose yours]</option>
+                        <option value = "1">NIGERIA</option>
+                        <option value = "2">DUBAI</option>
+                        <option value = "3">MOROCCO</option>
+                        <option value = "3">TOGO</option>
+                        <option value = "3">CAMEROUN</option>
+                     </select>
+                  </td>
+               </tr>
+               
+               <tr>
+                  <td align = "right"></td>
+                  <td><input style="width: 100px; " type= "submit" value="Sign In" class="button-style" onclick="validate();"></td>
+               </tr>
+               
+            </table>
+         </form>      
+
+
+
+
+
+ ----->
+
+
+
+
+
+</html>
